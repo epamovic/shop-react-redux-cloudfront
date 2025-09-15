@@ -8,7 +8,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "deploy": "cdk synth > MyStack.template.json && cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
