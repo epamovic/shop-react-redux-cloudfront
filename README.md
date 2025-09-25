@@ -69,3 +69,21 @@ Combination of `cloudfront:setup` and `cloudfront:build:deploy` commands with or
 ### `serverless:remove`
 
 Remove an entire stack configured in `serverless.yml` via CloudFormation.
+
+## TASK 2
+
+### `fe:build:deploy` script
+
+Builds the app and runs the `deploy` script in the `infra` folder.
+
+### Link to Git PR
+
+[GitHub Pull Request #1](https://github.com/epamovic/shop-react-redux-cloudfront/pull/1)
+
+### Link to cloudfront deployment
+
+[CloudFront Deployment](https://d3o7wujgkdsfjp.cloudfront.net/)
+
+### Link to S3 bucket
+
+[S3 Bucket](https://deploywebappstack-deploymentfrontendbucket67ceb713-5zatb3x09hce.s3.eu-central-1.amazonaws.com/index.html)
