@@ -8,7 +8,10 @@ type CSVFileImportProps = {
   title: string;
 };
 
-export default function CSVFileImport({ url, title }: CSVFileImportProps) {
+export default function CSVFileImport({
+  url,
+  title,
+}: Readonly<CSVFileImportProps>) {
   const [file, setFile] = React.useState<File>();
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,12 +34,17 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       return;
     }
 
+    const authToken = localStorage.getItem("authorization_token") || "";
+
     // Get the presigned URL
     const response = await axios({
       method: "GET",
       url,
       params: {
         name: encodeURIComponent(file.name),
+      },
+      headers: {
+        Authorization: `Basic ${authToken}`,
       },
     });
     console.log("File to upload: ", file.name);
